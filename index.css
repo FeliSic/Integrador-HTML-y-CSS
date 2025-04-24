@@ -1,0 +1,394 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/*header section start*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  background-color: #c4c4c4;
+  padding: 5px;
+}
+
+
+.header-menu{
+  display: none;
+}
+
+
+/* Estilos para el menú hamburguesa */
+.header-menu__toggle { /* Sin espacio entre 'div' y '.menu-toggle' */
+  display: flex; /* Mostrar el menú hamburguesa */
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: space-around; /* Centrar las barras */
+}
+
+.bar {
+  height: 6px;
+  width: 40px;
+  background-color: #000; /* Color de las barras */
+}
+
+
+
+@media (min-width: 769px){
+  .header-menu{
+    display: initial;
+    padding: 10px;
+  }
+
+  .header-menu__options{
+    text-decoration: none;
+    color: #000;
+    margin: 50px;
+  }
+
+  .header-menu__toggle{
+    display: none;
+  }
+}
+
+
+
+
+/*header section end*/
+
+
+
+/* main section start*/
+
+.main {
+  background-color: #c4c4c4;
+  min-height: 93vh; /* Ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  position: relative; /* Importante para el logo */
+}
+
+
+.main__title{
+  text-align: center;
+  font-size: 50px;
+}
+
+
+.section-1, .section-2, .section-3 {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.main__logo{
+  position: absolute;
+  bottom: 0;
+
+}
+
+
+@media (min-width: 769px){
+  .main {
+    flex-direction: row; /* Cambia la dirección a horizontal */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    min-height: 92vh;
+  }
+
+  .main__title {
+    margin-left: 20px;
+    margin-top: -200px;
+  }
+
+  .main__logo {
+    margin-right: 70px;
+    position: absolute; /* posicionamos la imagen absolutamente */
+    bottom: 0;          /* pegada al borde inferior */
+    right: 0;           /* o left: 0, según el extremo que quieras */
+  }
+}
+
+
+
+/* main section end*/
+
+
+
+
+
+/* section 1 start */
+
+.section-1{
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section-1__title{
+  font-size: 2rem;
+}
+
+.section-1__title, .section-1__text{
+  color: #fff;
+  text-align: center;
+
+}
+
+.section-1__text{
+  font-size: 1.5rem;
+}
+
+.section-1__img2{
+  display: none;
+}
+
+@media (min-width: 769px){
+  .section-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Dos columnas: texto y imagen */
+    grid-template-rows: auto auto;
+  }
+
+  .section-1__title {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .section-1__text {
+    font-size: 1rem;
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .section-1__img{
+    display: none;
+  }
+
+  .section-1__img2 {
+    display: inline;
+    grid-column: 2;
+    grid-row: 1 / span 2; /* Imagen ocupa ambas filas */
+  }
+}
+
+
+/* section 1 end */
+
+
+
+
+
+
+
+/* section 2 start */
+
+.section-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+  min-height: 200vh;
+  
+}
+
+.contenedor1-section2, .contenedor2-section2, .contenedor3-section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.section-2__title{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.section-2__subtitles{
+  font-size: 1.5rem;
+}
+
+.section-2__subtitles, .section-2__text{
+  text-align: center;
+  
+}
+
+@media (min-width: 769px){
+  .section-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px; /* Espacio entre contenedores */
+    min-height: 100vh;
+  }
+  .section-2__title {
+    grid-column: 1 / span 3; /* Título ocupa las 3 columnas */
+    text-align: center;
+  }
+  
+
+  .contenedor1-section2,
+  .contenedor2-section2,
+  .contenedor3-section2 {
+    flex-direction: column; /* Vuelve a columna para contenido interno */
+    margin-bottom: 0; /* Elimina el margen inferior */
+  }
+}
+
+
+/* section 2 end */
+
+
+
+
+
+
+
+/* section 3 start */
+
+.section-3{
+  background-color: #000d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.section-3__title{
+  text-align: center;
+  font-size: 40px;
+}
+
+.section-3__title, label{
+  color: #fff;
+}
+
+label{
+  margin-top: 25px;
+}
+
+.section-3__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.name, .email, .area-message{
+  border-radius: 0;
+  margin: 15px 0;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.section-3__button{
+  margin: 20px;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  color: #000;
+  background-color: #ecf168;
+}
+
+.area-message{
+  min-height: 150px;
+}
+
+
+@media (min-width: 769px){
+  .section-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .section-3__form{
+    margin-left: 100px;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* section 3 end */
+
+
+
+
+
+
+/* footer start */
+.footer{
+  min-height: 65vh;
+  display: flex; /* Usar flexbox para el footer */
+  flex-direction: column; /* Apilar elementos verticalmente */
+  justify-content: center; /* Centrar elementos horizontalmente */
+  background-color: #c4c4c4; /* Color de fondo del footer */
+  padding: 90px 15px 90px; /* Espaciado interno */
+}
+
+.footer-logo{
+  width: 15%;
+  height: 15%;
+  margin-left: 15px;
+  margin-bottom: 50px;
+  margin-top: -50px;
+}
+
+.footer-contenedor__links{
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+
+.footer-links{
+  text-decoration: none;
+  margin: 15px;
+  font-size: 30px;
+}
+
+
+@media (min-width: 769px){
+  .footer {
+    min-height: 40vh;
+    flex-direction: row; /* Distribuir logo y enlaces en fila */
+    justify-content: space-between; /* Espacio entre logo y enlaces */
+    align-items: center; /* Centrar verticalmente */
+    padding: 20px 50px; /* Ajusta el padding */
+  }
+
+  .footer-logo {
+    width: 10%; /* Tamaño del logo en desktop */
+    max-width: 150px; /* Limita el ancho máximo del logo */
+    margin: auto; /* Elimina el margen inferior */
+    margin-left: 30px;
+  }
+
+  .footer-contenedor__links {
+    flex-direction: column; /* Enlaces en fila */
+    margin: auto;
+    margin-right: 30px;
+  }
+
+  .footer-links{
+    text-decoration: none;
+    margin: 15px;
+    font-size: 20px;
+  }
+  
+}
+
+/* footer end */
+
