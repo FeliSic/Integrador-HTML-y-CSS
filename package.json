@@ -1,0 +1,8 @@
+{
+  "name": "Integrador HTML y CSS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/FeliSic/Integrador-HTML-y-CSS",
+  "author": "felis <felisicca@gmail.com>",
+  "license": "MIT"
+}
